@@ -21,11 +21,14 @@ The point is portability: write the skill once, use it from every tool you alrea
 | [`caveman`](caveman/SKILL.md) | Ultra-compressed output mode. Cuts token usage ~75% while keeping every piece of technical substance. Intensity levels: `lite`, `full` (default), `ultra`. |
 | [`plan`](plan/SKILL.md) | Decomposes a goal into an issue-ready plan: file inventory, discrete issues with acceptance criteria, dependency waves, and mechanical validation commands. Planning only. |
 | [`implement`](implement/SKILL.md) | Executes a plan written by `plan`, wave by wave, honoring its Execution Contract and per-issue checks. Sister skill to `plan`. |
+| [`phased-plan`](phased-plan/SKILL.md) | Writes a plan as small phases a person tests by hand, one at a time, gated by `PASS` / `FAIL` / `SKIP`, then offers to save it for a later chat to continue. |
 | [`deep-research`](deep-research/SKILL.md) | Parallel multi-source research producing a cited Markdown report with confidence tracking. Eleven research types: market, domain, technical, competitive, product, academic, person/org, financial, legal, trend, community. |
 | [`suggestion`](suggestion/SKILL.md) | Generates 7–12 ranked, context-specific improvement ideas with quick-win and effort tags. |
 
 `plan` and `implement` are designed as a pair: `plan` produces the artifact, `implement`
-consumes it. The rest stand alone.
+consumes it. `phased-plan` is the human-in-the-loop alternative to that pair: instead of
+machine-checked issues and dependency waves it writes one hand-testable phase at a time and
+stops for a `PASS` / `FAIL` / `SKIP` answer before the next one. The rest stand alone.
 
 ## Structure
 
