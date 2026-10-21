@@ -24,9 +24,17 @@ The point is portability: write the skill once, use it from every tool you alrea
 | [`phased-plan`](phased-plan/SKILL.md) | Writes a plan as small phases a person tests by hand, one at a time, gated by `PASS` / `FAIL` / `SKIP`, then offers to save it for a later chat to continue. |
 | [`deep-research`](deep-research/SKILL.md) | Parallel multi-source research producing a cited Markdown report with confidence tracking. Eleven research types: market, domain, technical, competitive, product, academic, person/org, financial, legal, trend, community. |
 | [`suggestion`](suggestion/SKILL.md) | Generates 7–12 ranked, context-specific improvement ideas with quick-win and effort tags. |
+| [`unit-test-plan`](unit-test-plan/SKILL.md) | Designs a unit-test case document before any test is written: unit inventory, substitution map, numbered cases with given/when/then, an observable result per case, and a per-case status. Language-agnostic, no test code. |
+| [`unit-test-impl`](unit-test-impl/SKILL.md) | Consumes that case document and writes one test per case, the case ID in the test name, updating each case's status as it runs. Refuses to start without a plan, and reports a red test on existing code as a finding instead of editing the code. |
 
 `plan` and `implement` are designed as a pair: `plan` produces the artifact, `implement`
-consumes it. `phased-plan` is the human-in-the-loop alternative to that pair: instead of
+consumes it. `unit-test-plan` and `unit-test-impl` are a second pair of the same shape,
+narrowed to tests: the case document is joinable by eye and greppable by ID, every case
+carries its own status (`pending`, `done`, `finding`, `blocked`, `skipped`), and the
+implementer only ever executes the `pending` ones — so a second run resumes instead of
+duplicating. Because the document states its own contract and progress block, it also
+works as a handoff prompt for a different agent or tool.
+`phased-plan` is the human-in-the-loop alternative to that pair: instead of
 machine-checked issues and dependency waves it writes one hand-testable phase at a time and
 stops for a `PASS` / `FAIL` / `SKIP` answer before the next one. The rest stand alone.
 
