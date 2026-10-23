@@ -19,6 +19,10 @@ skill is the pipeline that enforces those three things, in that order.
 Each step gates the next. Do not skip the gates because the skill "seems
 obvious".
 
+**Don't use for:** editing an existing skill (just patch it), batch-auditing a
+library (that's `skill-audit`), or packaging skills for several clients at once
+(that's `portable-agent-skills`).
+
 ## Step 0 — Context questions (max 5, and only if needed)
 
 If the request already names the domain and the trigger ("create a skill for

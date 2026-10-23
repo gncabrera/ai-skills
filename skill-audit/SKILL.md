@@ -15,6 +15,10 @@ will it execute correctly?** A skill can read beautifully and still be dead —
 wrong folder name, description that never matches a request, steps too vague to
 follow, no way to tell whether it worked.
 
+**Don't use for:** code review, runtime debugging, config validation, or grading
+non-skill documents (a plan, a README, an API spec). Auditing a *library's*
+overlap problems is in scope — the batch section covers it.
+
 ## How a skill gets discovered
 
 Three phases, and a skill can die in any of them:
