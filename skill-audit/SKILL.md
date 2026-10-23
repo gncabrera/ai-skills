@@ -174,17 +174,21 @@ splitting into `references/` −2 · structure inconsistent with peer skills −
 
 ```bash
 cd <skills-root>
-for f in */SKILL.md; do
-  folder=$(dirname "$f")
-  name=$(awk -F': *' '/^name:/{print $2; exit}' "$f")
-  chars=$(awk '/^description:/{flag=1} flag{printf "%s ", $0} /^[a-z-]+:/{if(flag&&NR>1&&$0!~/^description:/)exit}' "$f" | wc -c)
-  printf '%-28s name=%-24s desc_bytes=%s\n' "$folder" "${name:-MISSING}" "$chars"
-done
+python3 - <<'PY'
+import pathlib, re
+for skill in sorted(pathlib.Path('.').glob('*/SKILL.md')):
+    text = skill.read_text(encoding='utf-8')
+    fm = text.split('---', 2)[1] if text.startswith('---') else ''
+    name = re.search(r'^name:\s*(\S+)', fm, re.M)
+    desc = re.search(r'^description:\s*(.+?)(?=^\w[\w-]*:|\Z)', fm, re.S | re.M)
+    d = ' '.join(desc.group(1).split()) if desc else ''
+    print(f"{skill.parent.name:26} name={name.group(1) if name else 'MISSING':26} desc={len(d):4} chars")
+PY
 ```
 
-Flag `name` ≠ folder, missing name, and descriptions near or past 1024 bytes.
-Bytes overcount multi-byte characters — treat the number as an upper bound and
-confirm before quoting it.
+Flag `name` ≠ folder, missing name, and descriptions near or past 1024 **characters**
+(the script counts characters, not bytes — `wc -c` would overcount emoji and
+accents by 2–4× and make a compliant description look illegal).
 
 **Phase 2 — deep audits.** If the client supports parallel subagents, split the
 flagged skills across them with the full five-dimension methodology pasted into
