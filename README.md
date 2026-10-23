@@ -31,6 +31,7 @@ The point is portability: write the skill once, use it from every tool you alrea
 | [`skill-audit`](skill-audit/SKILL.md) | Grades any SKILL.md A–F on five dimensions: frontmatter and description, unambiguous steps, real pitfalls with recoveries, verification, and structure. Includes a batch-audit workflow and the description-truncation caveat that decides whether a skill ever fires. |
 | [`skill-creator`](skill-creator/SKILL.md) | End-to-end skill authoring with quality gates: up to five context questions, placement, draft, a measurable validation pass (name/folder match, description budget, CRLF, YAML dates), a real load test, an A–F audit before publishing, and the symlink-not-copy distribution rule. |
 | [`retrospective`](retrospective/SKILL.md) | Post-task retro the agent runs itself: what went wrong, what went well, what to improve, a scored summary, a recurrence check, and an offer to turn the lesson into a skill. Task-type-specific extra questions for deploys, code, docs, debugging and config. |
+| [`postmortem`](postmortem/SKILL.md) | Writes an incident postmortem as a learning artifact: context gathering, timeline rebuilt from the session with the timezone verified, severity scoring, recurrence check against past postmortems, dry-run preview, index update, and at least one concrete prevention per incident. |
 
 `plan` and `implement` are designed as a pair: `plan` produces the artifact, `implement`
 consumes it. `unit-test-plan` and `unit-test-impl` are a second pair of the same shape,
