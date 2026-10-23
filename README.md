@@ -26,6 +26,7 @@ The point is portability: write the skill once, use it from every tool you alrea
 | [`suggestion`](suggestion/SKILL.md) | Generates 7–12 ranked, context-specific improvement ideas with quick-win and effort tags. |
 | [`unit-test-plan`](unit-test-plan/SKILL.md) | Designs a unit-test case document before any test is written: unit inventory, substitution map, numbered cases with given/when/then, an observable result per case, and a per-case status. Language-agnostic, no test code. |
 | [`unit-test-impl`](unit-test-impl/SKILL.md) | Consumes that case document and writes one test per case, the case ID in the test name, updating each case's status as it runs. Refuses to start without a plan, and reports a red test on existing code as a finding instead of editing the code. |
+| [`portable-agent-skills`](portable-agent-skills/SKILL.md) | One source-of-truth repo of agent-agnostic skills, symlinked into each client's discovery directory. Covers the Agent Skills format, what makes a skill portable, renaming and retiring without breaking discovery, publishing hygiene, and a shape-based checker that fails on leaked paths, emails, IPs and tokens before you publish. |
 
 `plan` and `implement` are designed as a pair: `plan` produces the artifact, `implement`
 consumes it. `unit-test-plan` and `unit-test-impl` are a second pair of the same shape,
