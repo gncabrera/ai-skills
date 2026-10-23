@@ -1,7 +1,7 @@
 ---
 name: skill-creator
 description: >-
-  Author a new skill end to end with quality gates: context questions, placement,
+  Create a skill end to end with quality gates: context questions, placement,
   draft, a measurable validation pass, a real load test, an A-F audit before
   publishing, and the symlink-not-copy distribution rule. Use when asked to
   create, write or save a skill, capture a repeated workflow as a skill, or turn
