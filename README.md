@@ -18,6 +18,7 @@ The point is portability: write the skill once, use it from every tool you alrea
 | Skill | What it does |
 |-------|--------------|
 | [`ask`](ask/SKILL.md) | Clarifies requirements before any work starts. Numbered questions, three labeled options each, one marked default. Discovery only — no implementation until you answer. |
+| [`brainstorming`](brainstorming/SKILL.md) | Develops open ideas into an approved project brief, or a deliberate pause for missing evidence. Cross-domain exploration, real alternatives, and proportionate decisions; offers planning separately without starting it. |
 | [`caveman`](caveman/SKILL.md) | Ultra-compressed output mode. Cuts token usage ~75% while keeping every piece of technical substance. Intensity levels: `lite`, `full` (default), `ultra`. |
 | [`plan`](plan/SKILL.md) | Decomposes a goal into an issue-ready plan: file inventory, discrete issues with acceptance criteria, dependency waves, and mechanical validation commands. Planning only. |
 | [`implement`](implement/SKILL.md) | Executes a plan written by `plan`, wave by wave, honoring its Execution Contract and per-issue checks. Sister skill to `plan`. |
@@ -128,8 +129,12 @@ body. Both work.
 ## Credits
 
 `deep-research` is adapted from [samber/cc-skills](https://github.com/samber/cc-skills) by
-Samuel Berthe and Maxme Courant (MIT). The rest are original or trimmed down from skills
-used in daily work.
+Samuel Berthe and Maxme Courant (MIT).
+
+`brainstorming` is inspired by [Superpowers](https://github.com/obra/superpowers/tree/main/skills/brainstorming)
+by Jesse Vincent, with independently reworked wording, organization, and a cross-domain
+design process. Its upstream MIT notice is preserved in [brainstorming/LICENSE](brainstorming/LICENSE).
+The other skills are original or trimmed down from skills used in daily work.
 
 ## License
 
